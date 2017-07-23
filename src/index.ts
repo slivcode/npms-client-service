@@ -2,7 +2,7 @@ import { inject, injectable, optional } from 'inversify';
 import * as _fetch from 'isomorphic-fetch';
 import { resolve } from 'url';
 import { NpmsClient } from './interface';
-import { compactObject, QsUrl, toPairs } from './util';
+import { compactObject, of, QsUrl, toPairs } from './util';
 import Client = NpmsClient.Client;
 import Info = NpmsClient.Info;
 import RespSearch = NpmsClient.RespSearch;
@@ -21,7 +21,9 @@ export class NpmsClientService implements Client {
 
   parseQuery (arg: SearchArg): SearchQuery {
     let { q = '', from, size, ...rest } = arg;
-    q = q + ' ' + toPairs(rest).map(([k, v]) => v.map(x => `${k}:${v}`).join(' ')).join(' ');
+    q = q + ' ' + toPairs(rest)
+      .map(([k, v]) => of(v).map(x => `${k}:${v}`).join(' '))
+      .join(' ');
     return compactObject({ q, from, size });
   }
 

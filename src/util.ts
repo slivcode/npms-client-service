@@ -19,3 +19,8 @@ export function compactObject<A extends object> (o: A) {
     return pr;
   }, {}) as Partial<A>;
 }
+
+// @internal
+export function of (x) {
+  return Array.isArray(x) ? x : [x];
+}

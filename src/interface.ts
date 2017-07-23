@@ -1,4 +1,3 @@
-// @internal
 export namespace NpmsClient {
   export interface Item {
     name: string
@@ -26,7 +25,7 @@ export namespace NpmsClient {
     [s: string]: any;
   }
 
-  export type ValArr = (string | number)[];
+  export type ValArr = string | (string | number)[];
 
   export interface SearchArg {
     q?: string;

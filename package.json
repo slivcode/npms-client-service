@@ -6,7 +6,7 @@
     "clean": "rm -rf lib dist",
     "test": "jest --no-watchman",
     "compile": "tsc -d --outDir lib",
-    "release": "npm run clean\nnpm run compile\nmkdir dist\ncp lib/* package.json dist"
+    "release": "npm run clean\nnpm run compile &&\nmkdir dist &&\ncp lib/* package.json README.md dist\nrm -rf dist/*.test.*"
   },
   "repository": {
     "type": "git",
@@ -27,19 +27,19 @@
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "^0.0.34",
-    "@types/node": "^8.0.15",
-    "@types/jest": "^20.0.4"
+    "@types/jest": "^20.0.4",
+    "@types/node": "^8.0.15"
   },
   "jest": {
     "transform": {
       ".(ts|tsx)": "/g/node_modules/ts-jest/preprocessor.js"
     },
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx)$",
     "moduleFileExtensions": [
       "ts",
       "tsx",
-      "js",
-      "json"
+      "json",
+      "js"
     ]
   },
   "readme": "ERROR: No README data found!"

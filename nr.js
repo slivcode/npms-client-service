@@ -12,7 +12,8 @@ module.exports = {
 		`@clean`,
 		`@compile &&`,
 		`mkdir dist &&`,
-		`cp lib/* package.json dist`,
-		`npm publish dist`
+		`cp lib/* package.json README.md dist`,
+		`rm -rf dist/*.test.*`
+		// `npm publish dist`
 	]
 };
