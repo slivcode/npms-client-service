@@ -13,7 +13,7 @@ module.exports = {
 		`@compile &&`,
 		`mkdir dist &&`,
 		`cp lib/* package.json README.md dist`,
-		`rm -rf dist/*.test.*`
-		// `npm publish dist`
+		`rm -rf dist/*.test.*`,
+		`npm publish dist`
 	]
 };
