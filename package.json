@@ -6,7 +6,7 @@
     "clean": "rm -rf lib dist",
     "test": "jest --no-watchman",
     "compile": "tsc -d --outDir lib",
-    "release": "npm run clean\nnpm run compile &&\nmkdir dist &&\ncp lib/* package.json README.md dist\nrm -rf dist/*.test.*"
+    "release": "npm run clean\nnpm run compile &&\nmkdir dist &&\ncp lib/* package.json README.md dist\nrm -rf dist/*.test.*\nnpm publish dist"
   },
   "repository": {
     "type": "git",
