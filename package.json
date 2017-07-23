@@ -1,0 +1,46 @@
+{
+  "name": "npms-client-service",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf lib dist",
+    "test": "jest --no-watchman",
+    "compile": "tsc -d --outDir lib",
+    "release": "npm run clean\nnpm run compile\nmkdir dist\ncp lib/* package.json dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slivcode/npms-client-service.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "sliv",
+    "email": "sliv.mbp@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slivcode/npms-client-service/issues"
+  },
+  "homepage": "https://github.com/slivcode/npms-client-service#readme",
+  "dependencies": {
+    "inversify": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/isomorphic-fetch": "^0.0.34",
+    "@types/node": "^8.0.15",
+    "@types/jest": "^20.0.4"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "/g/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
+  "readme": "ERROR: No README data found!"
+}
